@@ -17,8 +17,10 @@ export const profile: Profile = {
     ja: "スペックルイメージング / 医用光学 / 非侵襲血流モニタリング",
     en: "Speckle imaging / Biomedical optics / Noninvasive blood flow monitoring"
   },
+  email: "s2630242@u.tsukuba.ac.jp",
   linkedinUrl: "https://www.linkedin.com/in/tomo-yamamoto/",
   researchmapUrl: "https://researchmap.jp/tomo-yamamoto",
+  githubUrl: "https://github.com/tomozzz",
   shortBio: {
     ja: "スペックルイメージングと生体光計測を基盤に、非侵襲的な血流モニタリングと末梢微小循環評価に取り組んでいます。",
     en: "Doctoral researcher working on speckle imaging, SCOS, and noninvasive blood flow monitoring in biomedical optics."

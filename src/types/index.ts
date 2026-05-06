@@ -12,6 +12,7 @@ export type Profile = {
   affiliation: LocalizedText;
   position: LocalizedText;
   researchField: LocalizedText;
+  email: string;
   linkedinUrl: string;
   researchmapUrl: string;
   githubUrl?: string;

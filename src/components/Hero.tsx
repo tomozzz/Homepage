@@ -89,8 +89,8 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                 </p>
                 <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
                   {locale === "ja"
-                    ? "研究分野、学歴、外部プロフィールを見通しよく整理しています。"
-                    : "A concise overview of research field, academic background, and external profiles."}
+                    ? "研究分野、学歴、外部プロフィールをまとめています。"
+                    : "Research field, academic background, and external profiles are summarized here."}
                 </p>
               </div>
 

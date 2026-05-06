@@ -8,6 +8,15 @@ import { SectionTitle } from "./SectionTitle";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
+function MailIcon(props: IconProps) {
+  return (
+    <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" {...props}>
+      <rect height="14" rx="3" width="18" x="3" y="5" />
+      <path d="M5.5 7.5L12 12.5L18.5 7.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function LinkedInIcon(props: IconProps) {
   return (
     <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" {...props}>
@@ -63,6 +72,13 @@ type ContactProps = {
 export function Contact({ locale }: ContactProps) {
   const contactItems = [
     {
+      label: "Email",
+      value: profile.email,
+      href: `mailto:${profile.email}`,
+      note: locale === "ja" ? "研究連絡先" : "Research contact",
+      icon: MailIcon
+    },
+    {
       label: "LinkedIn",
       value: formatDisplayUrl(profile.linkedinUrl),
       href: profile.linkedinUrl,
@@ -102,7 +118,7 @@ export function Contact({ locale }: ContactProps) {
           title={locale === "ja" ? "連絡先" : "Get in touch"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           {contactItems.map((item) => {
             const Icon = item.icon;
 

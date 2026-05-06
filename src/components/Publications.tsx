@@ -32,8 +32,8 @@ export function Publications({ locale }: PublicationsProps) {
         <SectionTitle
           description={
             locale === "ja"
-              ? "実在する論文・プロシーディングのみを掲載し、リンクがある場合は外部ページへ移動できます。"
-              : "Only verified publication records are listed here, with links to external pages when available."
+              ? "論文・プロシーディングを最新のものから順に掲載しています。リンクがある場合は外部ページへ移動できます。"
+              : "Publications and proceedings are listed from newest to oldest, with links to external pages when available."
           }
           eyebrow="Publications"
           title={

@@ -38,14 +38,14 @@ export function About({ locale }: AboutProps) {
             {locale === "ja" ? (
               <>
                 <span className="block">
-                  研究の軸は、光学計測を通して血流の深さ、分布、末梢循環の変化を段階的に捉えることです。
+                  研究の軸は、光学計測を通して、血流分布、末梢循環の変化、病態変化を段階的に捉えることです。
                 </span>
                 <span className="mt-2 block">
                   基礎的な計測評価から可視化、応用的なモニタリングへと研究を展開しています。
                 </span>
               </>
             ) : (
-              "The research vision is to capture blood flow depth, distribution, and peripheral circulatory changes through optical measurements, moving step by step from foundational evaluation to visualization and application-oriented monitoring."
+              "The research vision is to capture blood flow distribution, peripheral circulatory changes, and pathological changes through optical measurements, moving step by step from foundational evaluation to visualization and application-oriented monitoring."
             )}
           </p>
         </div>
