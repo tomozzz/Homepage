@@ -3,8 +3,8 @@ import { localize } from "../utils/localize";
 
 const flowSteps: LocalizedText[] = [
   {
-    ja: "血流深さの評価",
-    en: "Depth Evaluation"
+    ja: "測定可能深度の評価",
+    en: "Evaluation of Measurable Depth"
   },
   {
     ja: "血流マッピング",

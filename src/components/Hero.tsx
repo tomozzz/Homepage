@@ -1,3 +1,5 @@
+import type { SVGProps } from "react";
+
 import { aboutDetails, profile } from "../data/profile";
 import type { Locale, RouteKey } from "../types";
 import { localize } from "../utils/localize";
@@ -6,6 +8,56 @@ type HeroProps = {
   locale: Locale;
   onNavigate: (page: RouteKey, sectionId?: string) => void;
 };
+
+type IconProps = SVGProps<SVGSVGElement>;
+
+function MailIcon(props: IconProps) {
+  return (
+    <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" {...props}>
+      <rect height="14" rx="3" width="18" x="3" y="5" />
+      <path d="M5.5 7.5L12 12.5L18.5 7.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function LinkedInIcon(props: IconProps) {
+  return (
+    <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" {...props}>
+      <rect height="18" rx="4" width="18" x="3" y="3" />
+      <path d="M8 10V16" strokeLinecap="round" />
+      <path d="M8 7.5H8.01" strokeLinecap="round" />
+      <path d="M12 16V10" strokeLinecap="round" />
+      <path
+        d="M12 11.5C12.7 10.5 13.7 10 15 10C17 10 18 11.4 18 13.8V16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ResearchMapIcon(props: IconProps) {
+  return (
+    <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" {...props}>
+      <circle cx="6" cy="7" r="2.5" />
+      <circle cx="18" cy="8" r="2.5" />
+      <circle cx="12" cy="17" r="2.5" />
+      <path d="M8.2 8.2L10.5 14.3" strokeLinecap="round" />
+      <path d="M15.8 9.2L13.5 14.3" strokeLinecap="round" />
+      <path d="M8.5 7.8H15.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CodeIcon(props: IconProps) {
+  return (
+    <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" {...props}>
+      <path d="M9 8L5 12L9 16" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15 8L19 12L15 16" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M13 5L11 19" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 export function Hero({ locale, onNavigate }: HeroProps) {
   const secondaryName = locale === "ja" ? profile.name.en : profile.name.ja;
@@ -17,21 +69,25 @@ export function Hero({ locale, onNavigate }: HeroProps) {
   const externalProfiles = [
     {
       label: "Email",
-      href: `mailto:${profile.email}`
+      href: `mailto:${profile.email}`,
+      icon: MailIcon
     },
     {
       label: "LinkedIn",
-      href: profile.linkedinUrl
+      href: profile.linkedinUrl,
+      icon: LinkedInIcon
     },
     {
       label: "researchmap",
-      href: profile.researchmapUrl
+      href: profile.researchmapUrl,
+      icon: ResearchMapIcon
     },
     ...(profile.githubUrl
       ? [
           {
             label: "GitHub",
-            href: profile.githubUrl
+            href: profile.githubUrl,
+            icon: CodeIcon
           }
         ]
       : [])
@@ -50,7 +106,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
         : "Research field, academic background, and external profiles are summarized here.",
     fieldLabel: locale === "ja" ? "研究分野" : "Research field",
     educationLabel: locale === "ja" ? "学歴" : "Education",
-    linksLabel: locale === "ja" ? "External profiles" : "External profiles"
+    linksLabel: "External profiles"
   };
 
   return (
@@ -155,18 +211,25 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                   <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
                     {copy.linksLabel}
                   </p>
-                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                    {externalProfiles.map((item) => (
-                      <a
-                        className="inline-flex items-center justify-center rounded-full border border-cyan-200 bg-white px-4 py-2.5 text-sm font-semibold text-cyan-800 transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-900"
-                        href={item.href}
-                        key={item.label}
-                        rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
-                        target={item.href.startsWith("mailto:") ? undefined : "_blank"}
-                      >
-                        {item.label}
-                      </a>
-                    ))}
+                  <div className="mt-3 grid grid-cols-4 gap-3">
+                    {externalProfiles.map((item) => {
+                      const Icon = item.icon;
+
+                      return (
+                        <a
+                          aria-label={item.label}
+                          className="inline-flex h-12 items-center justify-center rounded-2xl border border-cyan-200 bg-white text-cyan-800 transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-900 sm:h-14"
+                          href={item.href}
+                          key={item.label}
+                          rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                          target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+                          title={item.label}
+                        >
+                          <Icon aria-hidden="true" className="h-5 w-5" />
+                          <span className="sr-only">{item.label}</span>
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

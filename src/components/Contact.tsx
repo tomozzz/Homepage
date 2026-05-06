@@ -160,12 +160,14 @@ export function Contact({ locale }: ContactProps) {
                     <p className="mt-2 text-sm leading-6 text-slate-500 lg:hidden [overflow-wrap:anywhere]">
                       {item.value}
                     </p>
-                    <p className="mt-2 hidden text-sm leading-6 text-slate-500 lg:block lg:group-hover:hidden lg:group-focus-visible:hidden">
-                      {item.compactValue}
-                    </p>
-                    <p className="hidden text-sm leading-6 text-slate-500 [overflow-wrap:anywhere] lg:group-hover:block lg:group-focus-visible:block">
-                      {item.value}
-                    </p>
+                    <div className="relative mt-2 hidden h-12 overflow-hidden lg:block">
+                      <p className="absolute inset-x-0 top-0 text-sm leading-6 text-slate-500 transition duration-200 group-hover:translate-y-1 group-hover:opacity-0 group-focus-visible:translate-y-1 group-focus-visible:opacity-0">
+                        {item.compactValue}
+                      </p>
+                      <p className="absolute inset-x-0 top-0 text-sm leading-6 text-slate-500 opacity-0 transition duration-200 [overflow-wrap:anywhere] group-hover:opacity-100 group-focus-visible:opacity-100">
+                        {item.value}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </ExternalLinkCard>

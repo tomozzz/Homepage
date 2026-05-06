@@ -43,35 +43,37 @@ export function Research({ locale, onNavigate }: ResearchProps) {
 
         <div className="space-y-8">
           <div className="section-card overflow-hidden">
-            <div className="grid gap-0 lg:grid-cols-[1.02fr_0.98fr]">
-              <div className="p-8 sm:p-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-                  {locale === "ja" ? "SCOSとは？" : "What is SCOS?"}
-                </p>
-                <h3 className="mt-4 font-display text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-                  Speckle Contrast Optical Spectroscopy (SCOS)
-                </h3>
-                <p className="mt-5 text-base leading-8 text-slate-700 sm:text-lg">
-                  {locale === "ja"
-                    ? "SCOS は Speckle Contrast Optical Spectroscopy の略で、レーザー光を照射した生体組織から得られるスペックルパターンの揺らぎを解析し、血流情報を推定する光学計測法です。カメラベースで構成できるため、広い領域を対象とした血流の可視化や、時系列変化の観察へ展開しやすい特徴があります。"
-                    : "SCOS, or Speckle Contrast Optical Spectroscopy, is an optical technique for estimating blood flow by analyzing fluctuations in laser speckle patterns formed by scattered light from biological tissue. Because SCOS can be implemented with a camera-based system, it is well suited to visualizing blood flow over a wider field and tracking temporal flow dynamics."}
-                </p>
+            <div className="p-8 sm:p-10">
+              <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+                    {locale === "ja" ? "SCOSとは？" : "What is SCOS?"}
+                  </p>
+                  <h3 className="mt-4 font-display text-3xl font-bold leading-[1.04] tracking-tight text-slate-950 sm:text-[2.7rem] lg:text-[2.9rem]">
+                    Speckle Contrast Optical Spectroscopy (SCOS)
+                  </h3>
+                  <p className="mt-5 text-base leading-8 text-slate-700 sm:text-lg">
+                    {locale === "ja"
+                      ? "SCOS は Speckle Contrast Optical Spectroscopy の略で、レーザー光を照射した生体組織から得られるスペックルパターンの揺らぎを解析し、スペックルコントラストを算出することで血流情報を推定する光学計測法です。スペックルコントラストの値は血流速度の違いを反映するため、その変化を用いて血流速度に対応した指標を評価できます。カメラベースで構成できるため、広い領域を対象とした血流の可視化や、時系列変化の観察へ展開しやすい特徴があります。"
+                      : "SCOS, or Speckle Contrast Optical Spectroscopy, is an optical technique that analyzes fluctuations in laser speckle patterns formed by scattered light from biological tissue and computes speckle contrast to estimate blood flow. Because speckle contrast reflects differences in flow speed, SCOS can be used to evaluate blood-flow-related indices associated with blood flow velocity. Implemented with a camera-based system, it is also well suited to visualizing blood flow over a wider field and tracking temporal flow dynamics."}
+                  </p>
+                </div>
 
-                <ul className="mt-6 grid gap-4">
+                <div className="space-y-4 lg:pt-12">
                   {scosHighlights[locale].map((item) => (
-                    <li
+                    <div
                       className="rounded-[1.4rem] border border-slate-100 bg-slate-50/80 px-5 py-4 text-sm leading-7 text-slate-700 sm:text-base"
                       key={item}
                     >
                       {item}
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              <div className="border-t border-slate-100 bg-slate-50/70 p-6 sm:p-8 lg:border-l lg:border-t-0">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="relative aspect-square overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 shadow-soft">
+              <div className="mt-8 border-t border-slate-100 pt-8">
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-5">
+                  <div className="relative aspect-square w-[15rem] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 shadow-soft sm:w-[16rem] lg:w-[17rem]">
                     <video
                       aria-label={
                         locale === "ja"
@@ -79,7 +81,7 @@ export function Research({ locale, onNavigate }: ResearchProps) {
                           : "Example speckle dynamics video"
                       }
                       autoPlay
-                      className="absolute inset-0 h-full w-full scale-[1.18] object-cover"
+                      className="absolute inset-0 h-full w-full origin-top scale-[1.02] object-cover object-top"
                       loop
                       muted
                       playsInline
@@ -91,7 +93,7 @@ export function Research({ locale, onNavigate }: ResearchProps) {
                     </video>
                   </div>
 
-                  <div className="relative aspect-square overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 shadow-soft">
+                  <div className="relative aspect-square w-[15rem] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 shadow-soft sm:w-[16rem] lg:w-[17rem]">
                     <video
                       aria-label={
                         locale === "ja"
@@ -99,7 +101,7 @@ export function Research({ locale, onNavigate }: ResearchProps) {
                           : "Example speckle dynamics video"
                       }
                       autoPlay
-                      className="absolute inset-0 h-full w-full scale-[1.18] object-cover"
+                      className="absolute inset-0 h-full w-full origin-top scale-[1.02] object-cover object-top"
                       loop
                       muted
                       playsInline
@@ -112,11 +114,18 @@ export function Research({ locale, onNavigate }: ResearchProps) {
                   </div>
                 </div>
 
-                <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base">
-                  {locale === "ja"
-                    ? "スペックルの時間変動は血流条件に応じて変化し、その違いを定量化することが SCOS の血流評価につながります。"
-                    : "Differences in the temporal behavior of speckles reflect differences in flow conditions, forming the basis for SCOS-derived blood flow assessment."}
-                </p>
+                <div className="mx-auto mt-5 max-w-3xl text-center">
+                  <p className="text-sm font-semibold text-slate-700 sm:text-base">
+                    {locale === "ja"
+                      ? "図 前腕組織血流の計測例。"
+                      : "Figure. Example of forearm tissue blood flow measurement."}
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600 sm:text-base">
+                    {locale === "ja"
+                      ? "スペックルコントラストが小さいほど、血流が速いことがわかります。"
+                      : "Lower speckle contrast indicates faster blood flow."}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -124,22 +133,15 @@ export function Research({ locale, onNavigate }: ResearchProps) {
           <ResearchFlow locale={locale} />
 
           <div className="space-y-4">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div className="space-y-2">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-                  {locale === "ja" ? "研究プロジェクト" : "Research Projects"}
-                </p>
-                <h3 className="font-display text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-                  {locale === "ja"
-                    ? "基礎から応用へ進む研究ストーリー"
-                    : "A research storyline from fundamentals to applications"}
-                </h3>
-              </div>
-              <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-right">
-                {locale === "ja"
-                  ? "深さ評価、血流マッピング、ショックモデルへの応用という流れに沿って、研究の段階と目的が伝わるように整理しています。"
-                  : "The projects are arranged to clarify the progression from depth evaluation to flow mapping and finally to applications in shock models."}
+            <div className="space-y-2">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+                {locale === "ja" ? "研究プロジェクト" : "Research Projects"}
               </p>
+              <h3 className="font-display text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:whitespace-nowrap">
+                {locale === "ja"
+                  ? "基礎から応用へ進む研究ストーリー"
+                  : "A research storyline from fundamentals to applications"}
+              </h3>
             </div>
 
             <div className="grid gap-6 xl:grid-cols-3">
