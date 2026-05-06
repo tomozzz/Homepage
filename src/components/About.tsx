@@ -30,7 +30,9 @@ export function About({ locale }: AboutProps) {
             Research Vision
           </p>
           <h2 className="font-display text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            {locale === "ja" ? "「光」で血流を診る。" : "Seeing blood flow with light."}
+            {locale === "ja"
+              ? "からだの循環を、光で捉える。"
+              : "Capturing the body's circulation with light."}
           </h2>
           <p className="max-w-4xl text-lg leading-9 text-slate-700">
             {locale === "ja" ? (
