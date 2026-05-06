@@ -1,0 +1,11 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F8FBFD"/>
+  <circle cx="180" cy="160" r="180" fill="#CFFAFE" fill-opacity="0.85"/>
+  <circle cx="1040" cy="120" r="140" fill="#DBF4FF" fill-opacity="0.95"/>
+  <circle cx="980" cy="520" r="180" fill="#E0F7FA" fill-opacity="0.95"/>
+  <path d="M110 420C210 360 290 330 380 330C470 330 540 365 650 420C730 460 790 485 870 492C945 499 1025 486 1090 450" stroke="#0891B2" stroke-width="14" stroke-linecap="round"/>
+  <path d="M100 470C170 440 250 410 340 410C430 410 525 448 630 500C720 544 820 560 910 550C980 542 1035 520 1090 485" stroke="#22D3EE" stroke-width="8" stroke-linecap="round" stroke-opacity="0.7"/>
+  <text x="110" y="180" fill="#0F172A" font-family="Manrope, sans-serif" font-size="34" font-weight="700">Personal Website</text>
+  <text x="110" y="280" fill="#0F172A" font-family="'Source Serif 4', serif" font-size="88" font-weight="700">Tomoya Yamamoto</text>
+  <text x="110" y="344" fill="#155E75" font-family="Manrope, sans-serif" font-size="30" font-weight="600">Speckle imaging / Biomedical optics / Blood flow monitoring</text>
+</svg>
