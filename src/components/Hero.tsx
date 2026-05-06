@@ -14,6 +14,29 @@ export function Hero({ locale, onNavigate }: HeroProps) {
     ? localize(locale, educationDetail.value).split("\n").filter(Boolean)
     : [];
 
+  const externalProfiles = [
+    {
+      label: "Email",
+      href: `mailto:${profile.email}`
+    },
+    {
+      label: "LinkedIn",
+      href: profile.linkedinUrl
+    },
+    {
+      label: "researchmap",
+      href: profile.researchmapUrl
+    },
+    ...(profile.githubUrl
+      ? [
+          {
+            label: "GitHub",
+            href: profile.githubUrl
+          }
+        ]
+      : [])
+  ];
+
   const copy = {
     eyebrow: locale === "ja" ? "ホーム" : "Home",
     label: locale === "ja" ? "研究者プロフィール" : "Researcher profile",
@@ -21,22 +44,27 @@ export function Hero({ locale, onNavigate }: HeroProps) {
     publicationsButton: locale === "ja" ? "論文を見る" : "View Publications",
     contactButton: locale === "ja" ? "連絡先を見る" : "Contact",
     profileLabel: locale === "ja" ? "プロフィール" : "Profile",
+    profileDescription:
+      locale === "ja"
+        ? "研究分野、学歴、外部プロフィールをまとめています。"
+        : "Research field, academic background, and external profiles are summarized here.",
     fieldLabel: locale === "ja" ? "研究分野" : "Research field",
     educationLabel: locale === "ja" ? "学歴" : "Education",
     linksLabel: locale === "ja" ? "External profiles" : "External profiles"
   };
 
   return (
-    <section className="section-shell pt-28 sm:pt-32" id="home">
+    <section className="section-shell pt-24 sm:pt-28" id="home">
       <div className="section-inner">
-        <div className="grid items-start gap-10 lg:grid-cols-[1.02fr_0.98fr]">
-          <div className="space-y-8">
+        <div className="grid items-start gap-8 lg:grid-cols-[1.03fr_0.97fr] lg:gap-10">
+          <div className="space-y-7 lg:pt-2">
             <span className="eyebrow">{copy.eyebrow}</span>
 
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">
                 {copy.label}
               </p>
+
               <div className="space-y-2">
                 <h1 className="font-display text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
                   {profile.name[locale]}
@@ -45,12 +73,16 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                   {secondaryName}
                 </p>
               </div>
+
               <div className="space-y-2 text-slate-600">
                 <p className="text-xl font-semibold text-slate-700 sm:text-2xl">
-                  {profile.position[locale]}
+                  <span className="inline-block break-keep sm:whitespace-nowrap">
+                    {profile.position[locale]}
+                  </span>
                 </p>
                 <p className="text-lg leading-8">{profile.affiliation[locale]}</p>
               </div>
+
               <p className="max-w-2xl text-lg leading-9 text-slate-700">
                 {profile.shortBio[locale]}
               </p>
@@ -88,9 +120,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                   {copy.profileLabel}
                 </p>
                 <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-                  {locale === "ja"
-                    ? "研究分野、学歴、外部プロフィールをまとめています。"
-                    : "Research field, academic background, and external profiles are summarized here."}
+                  {copy.profileDescription}
                 </p>
               </div>
 
@@ -99,7 +129,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                   <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
                     {copy.fieldLabel}
                   </p>
-                  <p className="mt-2 text-sm leading-7 text-slate-700">
+                  <p className="mt-2 break-keep text-sm leading-7 text-slate-700">
                     {profile.researchField[locale]}
                   </p>
                 </div>
@@ -115,7 +145,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                           aria-hidden="true"
                           className="mt-3 h-1.5 w-1.5 flex-none rounded-full bg-cyan-500"
                         />
-                        <span>{line}</span>
+                        <span className="break-keep">{line}</span>
                       </li>
                     ))}
                   </ul>
@@ -125,23 +155,18 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                   <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
                     {copy.linksLabel}
                   </p>
-                  <div className="mt-3 flex flex-wrap gap-3">
-                    <a
-                      className="inline-flex items-center justify-center rounded-full border border-cyan-200 bg-white px-4 py-2 text-sm font-semibold text-cyan-800 transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-900"
-                      href={profile.linkedinUrl}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                    <a
-                      className="inline-flex items-center justify-center rounded-full border border-cyan-200 bg-white px-4 py-2 text-sm font-semibold text-cyan-800 transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-900"
-                      href={profile.researchmapUrl}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      researchmap
-                    </a>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    {externalProfiles.map((item) => (
+                      <a
+                        className="inline-flex items-center justify-center rounded-full border border-cyan-200 bg-white px-4 py-2.5 text-sm font-semibold text-cyan-800 transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-900"
+                        href={item.href}
+                        key={item.label}
+                        rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                        target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>

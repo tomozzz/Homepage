@@ -74,22 +74,28 @@ export function Contact({ locale }: ContactProps) {
     {
       label: "Email",
       value: profile.email,
+      compactValue: profile.email,
       href: `mailto:${profile.email}`,
-      note: locale === "ja" ? "研究連絡先" : "Research contact",
+      note: locale === "ja" ? "研究連絡" : "Research contact",
+      action: locale === "ja" ? "メールを送る" : "Send email",
       icon: MailIcon
     },
     {
       label: "LinkedIn",
       value: formatDisplayUrl(profile.linkedinUrl),
+      compactValue: locale === "ja" ? "プロフィールを開く" : "Open profile",
       href: profile.linkedinUrl,
-      note: locale === "ja" ? "プロフェッショナルプロフィール" : "Professional profile",
+      note: locale === "ja" ? "外部プロフィール" : "Professional profile",
+      action: locale === "ja" ? "外部ページへ" : "Open profile",
       icon: LinkedInIcon
     },
     {
       label: "researchmap",
       value: formatDisplayUrl(profile.researchmapUrl),
+      compactValue: locale === "ja" ? "研究業績を見る" : "View profile",
       href: profile.researchmapUrl,
       note: locale === "ja" ? "研究活動情報" : "Academic activity record",
+      action: locale === "ja" ? "外部ページへ" : "Open profile",
       icon: ResearchMapIcon
     },
     ...(profile.githubUrl
@@ -97,8 +103,10 @@ export function Contact({ locale }: ContactProps) {
           {
             label: "GitHub",
             value: formatDisplayUrl(profile.githubUrl),
+            compactValue: "@tomozzz",
             href: profile.githubUrl,
-            note: locale === "ja" ? "コードとプロジェクト" : "Code and project repository",
+            note: locale === "ja" ? "コードとプロジェクト" : "Code and projects",
+            action: locale === "ja" ? "外部ページへ" : "Open repository",
             icon: CodeIcon
           }
         ]
@@ -118,20 +126,20 @@ export function Contact({ locale }: ContactProps) {
           title={locale === "ja" ? "連絡先" : "Get in touch"}
         />
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {contactItems.map((item) => {
             const Icon = item.icon;
 
             return (
               <ExternalLinkCard
                 ariaLabel={`${item.label}${locale === "ja" ? " の外部リンク" : " external link"}`}
-                className="flex h-full min-w-0 flex-col justify-between gap-6"
+                className="flex h-full min-w-0 flex-col justify-between gap-6 p-5 sm:p-6"
                 href={item.href}
                 key={item.label}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700">
-                    <Icon aria-hidden="true" className="h-6 w-6" />
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700">
+                    <Icon aria-hidden="true" className="h-5 w-5" />
                   </div>
                   <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-500">
                     {item.label}
@@ -142,9 +150,23 @@ export function Contact({ locale }: ContactProps) {
                   <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
                     {item.note}
                   </p>
-                  <p className="break-words text-lg font-semibold leading-7 text-slate-900 [overflow-wrap:anywhere]">
-                    {item.value}
+                  <p className="text-2xl font-semibold tracking-tight text-slate-900">
+                    {item.label}
                   </p>
+                  <div className="min-w-0">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                      {item.action}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-slate-500 lg:hidden [overflow-wrap:anywhere]">
+                      {item.value}
+                    </p>
+                    <p className="mt-2 hidden text-sm leading-6 text-slate-500 lg:block lg:group-hover:hidden lg:group-focus-visible:hidden">
+                      {item.compactValue}
+                    </p>
+                    <p className="hidden text-sm leading-6 text-slate-500 [overflow-wrap:anywhere] lg:group-hover:block lg:group-focus-visible:block">
+                      {item.value}
+                    </p>
+                  </div>
                 </div>
               </ExternalLinkCard>
             );
