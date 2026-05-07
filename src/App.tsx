@@ -80,20 +80,20 @@ function App() {
     const title =
       locale === "ja"
         ? isResearchPage
-          ? `研究内容 | ${profile.name.ja}`
-          : `${profile.name.ja} | Personal Website`
+          ? `研究内容 | ${profile.name.ja} | SCOS・スペックルコントラスト分光法`
+          : `${profile.name.ja} | SCOS・スペックルコントラスト分光法・Biomedical Optics Research`
         : isResearchPage
-          ? `Research | ${profile.name.en}`
-          : `${profile.name.en} | Personal Website`;
+          ? `Research | ${profile.name.en} | SCOS and Biomedical Optics`
+          : `${profile.name.en} | SCOS and Biomedical Optics Research`;
 
     const description =
       locale === "ja"
         ? isResearchPage
-          ? "スペックルイメージングから SCOS、深さ評価、血流マッピング、出血性ショックモデルへの応用までを紹介する研究ページです。"
-          : "山本智也の個人ホームページ。医用光学、スペックルイメージング、SCOS、非侵襲血流モニタリングに関する研究活動を紹介します。"
+          ? "山本智也の研究内容ページ。SCOS、スペックルコントラスト分光法、スペックルコントラスト光学分光法を用いた血流計測、測定可能深度の評価、血流マッピング、出血性ショックモデルへの応用を紹介します。"
+          : "山本智也の個人ホームページ。医用光学、スペックルイメージング、SCOS、スペックルコントラスト分光法、拡散相関分光法、非侵襲血流モニタリングに関する研究活動を紹介します。"
         : isResearchPage
-          ? "Research page covering speckle imaging, the SCOS principle, depth evaluation, blood flow mapping, and applications to hemorrhagic shock models."
-          : "Personal website of Tomoya Yamamoto, focusing on biomedical optics, speckle imaging, SCOS, and noninvasive blood flow monitoring.";
+          ? "Research page of Tomoya Yamamoto covering SCOS, Speckle Contrast Optical Spectroscopy, measurable-depth evaluation, blood flow mapping, and applications to hemorrhagic shock models."
+          : "Personal website of Tomoya Yamamoto, focusing on biomedical optics, speckle imaging, SCOS, Speckle Contrast Optical Spectroscopy, DCS, Diffuse Correlation Spectroscopy, and noninvasive blood flow monitoring.";
 
     document.title = title;
 
