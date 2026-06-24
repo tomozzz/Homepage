@@ -1,6 +1,8 @@
 # Research Portfolio Homepage
 
-研究者・大学院生向けの GitHub Pages 対応パーソナルサイトです。Vite + React + TypeScript + Tailwind CSS で構成し、プロフィール、研究内容、論文、学会発表、受賞歴、連絡先を `src/data/` 配下で管理できるようにしています。
+[山本智也 | SCOS・スペックルコントラスト分光法・Biomedical Optics Research](https://tomozzz.github.io/Homepage/)
+
+山本智也の研究活動を紹介する GitHub Pages 対応パーソナルサイトです。Vite + React + TypeScript + Tailwind CSS で構成し、SCOS、血流計測、微小循環評価に関する研究内容、論文、学会発表、受賞歴、連絡先を `src/data/` 配下で管理できるようにしています。
 
 ## 1. 概要
 
