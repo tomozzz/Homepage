@@ -347,7 +347,7 @@ export function Research({ locale, onNavigate }: ResearchProps) {
               </div>
             </div>
 
-            <div className="grid border-t border-slate-200 bg-slate-50/60 lg:grid-cols-[1.08fr_0.92fr]">
+            <div className="grid border-t border-slate-200 bg-white lg:grid-cols-[1.08fr_0.92fr]">
               <figure className="flex h-full flex-col justify-center px-5 py-8 sm:px-8">
                 <div className="grid grid-cols-2 gap-3 sm:gap-5">
                   <div className="aspect-square overflow-hidden rounded-xl border border-slate-200 bg-black shadow-soft">
@@ -482,10 +482,10 @@ export function Research({ locale, onNavigate }: ResearchProps) {
           </div>
         </section>
 
-        <section aria-labelledby="scos-title" className="py-16 sm:py-20">
+        <section aria-labelledby="scos-title" className="pb-16 pt-4 sm:pb-20 sm:pt-6">
           <div className="section-rule mb-10 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-12">
             <div>
-              <p className="section-kicker">SCOS</p>
+              <p className="section-kicker">Speckle contrast optical spectroscopy</p>
               <h2 className="display-title mt-4" id="scos-title">
                 {locale === "ja" ? "スペックルを、深部血流計測へ" : "Extending speckle to deeper-tissue flow measurement"}
               </h2>
