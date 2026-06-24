@@ -482,15 +482,15 @@ export function Research({ locale, onNavigate }: ResearchProps) {
           </div>
         </section>
 
-        <section aria-labelledby="scos-title" className="panel-soft overflow-hidden">
-          <div className="grid gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:px-10">
+        <section aria-labelledby="scos-title" className="py-16 sm:py-20">
+          <div className="section-rule mb-10 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-12">
             <div>
               <p className="section-kicker">SCOS</p>
               <h2 className="display-title mt-4" id="scos-title">
                 {locale === "ja" ? "スペックルを、深部血流計測へ" : "Extending speckle to deeper-tissue flow measurement"}
               </h2>
             </div>
-            <div className="max-w-3xl space-y-5 text-base leading-8 text-slate-700">
+            <div className="max-w-3xl space-y-5 text-base leading-8 text-slate-700 sm:text-lg">
               <p>
                 {locale === "ja"
                   ? "SCOSは、近赤外レーザー光を組織へ照射し、離れた位置で戻ってきた拡散光をマルチモードファイバーとCMOSカメラで検出します。光源と検出器の間隔を設けることで、多重散乱を受けた光を選び、表面だけでなくより深い組織の血流変化へ感度を持たせます。"
@@ -506,7 +506,7 @@ export function Research({ locale, onNavigate }: ResearchProps) {
             </div>
           </div>
 
-          <div className="grid border-t border-slate-200 lg:grid-cols-3">
+          <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white/80 lg:grid-cols-3">
             <div className="border-b border-slate-200 px-5 py-7 sm:px-8 lg:border-b-0">
               <p className="meta-label text-cyan-700">01 / Illuminate</p>
               <h3 className="card-title mt-3">
