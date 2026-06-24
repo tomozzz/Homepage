@@ -544,7 +544,7 @@ export function Research({ locale, onNavigate }: ResearchProps) {
 
         </section>
 
-        <section aria-labelledby="research-projects-title" className="py-16 sm:py-20">
+        <section aria-labelledby="research-projects-title" className="pb-16 pt-4 sm:pb-20 sm:pt-6">
           <div className="section-rule mb-9 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-12">
             <div>
               <p className="section-kicker">
