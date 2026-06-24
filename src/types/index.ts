@@ -32,6 +32,16 @@ export type ResearchProject = {
   stage: "Fundamental" | "Methodological" | "Application";
 };
 
+export type ResearchReference = {
+  id: number;
+  authors: string;
+  title: string;
+  journal: string;
+  year: string;
+  doi: string;
+  url: string;
+};
+
 export type Publication = {
   title: string;
   authors: string;

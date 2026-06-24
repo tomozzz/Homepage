@@ -98,7 +98,7 @@ export const conferences: ConferencePresentation[] = [
       { ja: "小野 弓絵", en: "Yumie Ono" }
     ],
     conference: {
-      ja: "日本生体医工学会若手研究会関東支部 2025",
+      ja: "日本生体医工学会若手研究会関東支部 2025",
       en: "JSMBE Young Researchers' Meeting Kanto Branch 2025"
     },
     location: {
@@ -125,7 +125,7 @@ export const conferences: ConferencePresentation[] = [
       { ja: "小野 弓絵", en: "Yumie Ono" }
     ],
     conference: {
-      ja: "日本生体医工学会若手研究会関東支部 2025",
+      ja: "日本生体医工学会若手研究会関東支部 2025",
       en: "JSMBE Young Researchers' Meeting Kanto Branch 2025"
     },
     location: {
@@ -293,7 +293,7 @@ export const conferences: ConferencePresentation[] = [
       { ja: "小野 弓絵", en: "Yumie Ono" }
     ],
     conference: {
-      ja: "日本生体医工学会若手研究会関東支部 2023",
+      ja: "日本生体医工学会若手研究会関東支部 2023",
       en: "JSMBE Young Researchers' Meeting Kanto Branch 2023"
     },
     location: {

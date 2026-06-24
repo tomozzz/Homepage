@@ -45,12 +45,12 @@ export function Publications({ locale }: PublicationsProps) {
 
         {sortedPublications.length === 0 ? (
           <div className="section-card p-10 text-center">
-            <p className="text-lg font-semibold text-slate-900">
+            <p className="card-title">
               {locale === "ja"
                 ? "論文データは今後追加予定です。"
                 : "Publication data will be added soon."}
             </p>
-            <p className="mt-3 text-sm leading-7 text-slate-600">
+            <p className="card-copy mt-3">
               {locale === "ja"
                 ? "実データは "
                 : "Add real publication records to "}
@@ -76,19 +76,19 @@ export function Publications({ locale }: PublicationsProps) {
                 >
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div className="space-y-2">
-                      <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                      <h3 className="card-title">
                         {publication.title}
                       </h3>
-                      <p className="text-sm leading-7 text-slate-600">
+                      <p className="card-copy">
                         {publication.authors}
                       </p>
                     </div>
-                    <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">
+                    <span className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">
                       {publication.year}
                     </span>
                   </div>
 
-                  <p className="text-sm font-medium text-slate-700">
+                  <p className="text-base font-medium leading-7 text-slate-700">
                     {publication.venue}
                   </p>
 

@@ -19,15 +19,14 @@ export default {
         }
       },
       boxShadow: {
-        soft: "0 24px 60px rgba(15, 23, 42, 0.08)",
-        float: "0 24px 48px rgba(8, 145, 178, 0.14)"
+        soft: "0 16px 44px rgba(15, 23, 42, 0.07)",
+        float: "0 18px 42px rgba(8, 145, 178, 0.12)"
       },
       fontFamily: {
-        sans: ["Manrope", "ui-sans-serif", "sans-serif"],
-        display: ["Source Serif 4", "ui-serif", "serif"]
+        sans: ["Manrope", "Noto Sans JP", "ui-sans-serif", "sans-serif"],
+        display: ["Source Serif 4", "Noto Serif JP", "ui-serif", "serif"]
       }
     }
   },
   plugins: []
 };
-

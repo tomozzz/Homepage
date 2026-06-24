@@ -15,14 +15,20 @@ export function SectionTitle({
     align === "center" ? "items-center text-center" : "items-start text-left";
 
   return (
-    <div className={`mb-10 flex max-w-3xl flex-col gap-4 ${alignClass}`}>
-      <span className="eyebrow">{eyebrow}</span>
-      <div className="space-y-3">
-        <h2 className="font-display text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+    <div className={`mb-12 border-t border-slate-300 pt-5 ${alignClass}`}>
+      <span className="section-kicker">{eyebrow}</span>
+      <div
+        className={
+          align === "center"
+            ? "mx-auto mt-4 max-w-3xl space-y-4"
+            : "mt-4 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-12"
+        }
+      >
+        <h2 className="display-title">
           {title}
         </h2>
         {description ? (
-          <p className="text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="body-copy max-w-3xl">
             {description}
           </p>
         ) : null}
@@ -30,4 +36,3 @@ export function SectionTitle({
     </div>
   );
 }
-

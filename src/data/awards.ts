@@ -7,7 +7,7 @@ export const awards: Award[] = [
       en: "Excellent Presentation Award"
     },
     organization: {
-      ja: "日本生体医工学会専門別研究会・第35回 fNIRS 計測・解析技術研究会",
+      ja: "日本生体医工学会専門別研究会・第35回fNIRS計測・解析技術研究会",
       en: "JSMBE Specialized Research Group / 35th fNIRS Measurement and Analysis Workshop"
     },
     year: "2025",

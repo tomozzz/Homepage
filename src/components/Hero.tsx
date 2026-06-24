@@ -110,36 +110,36 @@ export function Hero({ locale, onNavigate }: HeroProps) {
   };
 
   return (
-    <section className="section-shell pt-24 sm:pt-28" id="home">
+    <section className="section-shell pt-28 sm:pt-32" id="home">
       <div className="section-inner">
-        <div className="grid items-start gap-8 lg:grid-cols-[1.03fr_0.97fr] lg:gap-10">
-          <div className="space-y-7 lg:pt-2">
+        <div className="grid items-start gap-12 xl:grid-cols-[0.88fr_1.12fr] xl:gap-16">
+          <div className="space-y-8 xl:pt-4">
             <span className="eyebrow">{copy.eyebrow}</span>
 
-            <div className="space-y-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">
+            <div className="space-y-6">
+              <p className="section-kicker">
                 {copy.label}
               </p>
 
-              <div className="space-y-2">
-                <h1 className="font-display text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+              <div className="space-y-3">
+                <h1 className="font-display text-5xl font-bold leading-[1.12] text-slate-950 sm:text-6xl xl:text-7xl">
                   {profile.name[locale]}
                 </h1>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                <p className="text-sm font-semibold uppercase text-slate-500">
                   {secondaryName}
                 </p>
               </div>
 
-              <div className="space-y-2 text-slate-600">
-                <p className="text-xl font-semibold text-slate-700 sm:text-2xl">
-                  <span className="inline-block break-keep sm:whitespace-nowrap">
+              <div className="space-y-2 border-l-2 border-cyan-200 pl-5 text-slate-600">
+                <p className="text-xl font-semibold leading-8 text-slate-800 sm:text-2xl">
+                  <span className="inline-block break-keep">
                     {profile.position[locale]}
                   </span>
                 </p>
-                <p className="text-lg leading-8">{profile.affiliation[locale]}</p>
+                <p className="text-base leading-8 sm:text-lg">{profile.affiliation[locale]}</p>
               </div>
 
-              <p className="max-w-2xl text-lg leading-9 text-slate-700">
+              <p className="max-w-[42rem] text-base leading-8 text-slate-700 sm:text-lg sm:leading-9">
                 {profile.shortBio[locale]}
               </p>
             </div>
@@ -169,56 +169,58 @@ export function Hero({ locale, onNavigate }: HeroProps) {
             </div>
           </div>
 
-          <div className="section-card p-6 sm:p-8">
-            <div className="space-y-6">
-              <div className="space-y-3">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+          <aside className="section-card overflow-hidden p-6 sm:p-8 xl:p-9">
+            <div>
+              <div className="grid gap-3 sm:grid-cols-[10rem_minmax(0,1fr)] sm:items-start sm:gap-8">
+                <p className="section-kicker sm:pt-1">
                   {copy.profileLabel}
                 </p>
-                <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+                <p className="card-copy">
                   {copy.profileDescription}
                 </p>
               </div>
 
-              <div className="grid gap-4">
-                <div className="rounded-[1.5rem] border border-slate-100 bg-slate-50/80 px-5 py-4">
-                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
+              <dl className="mt-8 border-y border-slate-200">
+                <div className="grid gap-3 border-b border-slate-200 py-6 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-8">
+                  <dt className="meta-label">
                     {copy.fieldLabel}
-                  </p>
-                  <p className="mt-2 break-keep text-sm leading-7 text-slate-700">
+                  </dt>
+                  <dd className="card-copy text-slate-700 [word-break:auto-phrase]">
                     {profile.researchField[locale]}
-                  </p>
+                  </dd>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-slate-100 bg-slate-50/80 px-5 py-4">
-                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                <div className="grid gap-3 border-b border-slate-200 py-6 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-8">
+                  <dt className="meta-label">
                     {copy.educationLabel}
-                  </p>
-                  <ul className="mt-2 space-y-2 text-sm leading-7 text-slate-700">
+                  </dt>
+                  <dd>
+                    <ul className="space-y-3 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
                     {educationLines.map((line) => (
                       <li className="flex items-start gap-3" key={line}>
                         <span
                           aria-hidden="true"
-                          className="mt-3 h-1.5 w-1.5 flex-none rounded-full bg-cyan-500"
+                          className="mt-[0.7rem] h-1.5 w-1.5 flex-none rounded-full bg-cyan-500"
                         />
-                        <span className="break-keep">{line}</span>
+                        <span className="[word-break:auto-phrase]">{line}</span>
                       </li>
                     ))}
-                  </ul>
+                    </ul>
+                  </dd>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-slate-100 bg-slate-50/80 px-5 py-4">
-                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                <div className="grid gap-4 py-6 sm:grid-cols-[10rem_minmax(0,1fr)] sm:items-center sm:gap-8">
+                  <dt className="meta-label">
                     {copy.linksLabel}
-                  </p>
-                  <div className="mt-3 grid grid-cols-4 gap-3">
+                  </dt>
+                  <dd className="grid grid-cols-4 gap-3">
                     {externalProfiles.map((item) => {
                       const Icon = item.icon;
 
                       return (
                         <a
                           aria-label={item.label}
-                          className="inline-flex h-12 items-center justify-center rounded-2xl border border-cyan-200 bg-white text-cyan-800 transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-900 sm:h-14"
+                          className="inline-flex min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2 py-3 text-cyan-800 transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-950"
                           href={item.href}
                           key={item.label}
                           rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
@@ -226,15 +228,17 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                           title={item.label}
                         >
                           <Icon aria-hidden="true" className="h-5 w-5" />
-                          <span className="sr-only">{item.label}</span>
+                          <span className="truncate text-[0.68rem] font-semibold text-slate-500">
+                            {item.label}
+                          </span>
                         </a>
                       );
                     })}
-                  </div>
+                  </dd>
                 </div>
-              </div>
+              </dl>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>

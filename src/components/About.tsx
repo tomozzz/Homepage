@@ -8,15 +8,15 @@ type AboutProps = {
 
 const stageLabel = {
   Fundamental: {
-    ja: "Fundamental",
+    ja: "基礎評価",
     en: "Fundamental"
   },
   Methodological: {
-    ja: "Methodological",
+    ja: "計測・可視化",
     en: "Methodological"
   },
   Application: {
-    ja: "Application",
+    ja: "応用",
     en: "Application"
   }
 } as const;
@@ -25,45 +25,45 @@ export function About({ locale }: AboutProps) {
   return (
     <section className="section-shell" id="about">
       <div className="section-inner">
-        <div className="max-w-5xl space-y-5">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700">
+        <div className="section-rule">
+          <p className="section-kicker">
             Research Vision
           </p>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            {locale === "ja"
-              ? "からだの循環を、光で捉える。"
-              : "Capturing the body's circulation with light."}
-          </h2>
-          <p className="max-w-4xl text-lg leading-9 text-slate-700">
-            {locale === "ja" ? (
-              <>
-                <span className="block">
-                  研究の軸は、光学計測を通して、血流分布、末梢循環の変化、病態変化を段階的に捉えることです。
-                </span>
-                <span className="mt-2 block">
-                  基礎的な計測評価から可視化、応用的なモニタリングへと研究を展開しています。
-                </span>
-              </>
-            ) : (
-              "The research vision is to capture blood flow distribution, peripheral circulatory changes, and pathological changes through optical measurements, moving step by step from foundational evaluation to visualization and application-oriented monitoring."
-            )}
-          </p>
+          <div className="mt-4 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-12">
+            <h2 className="display-title">
+              {locale === "ja"
+                ? "からだの循環を、光で捉える。"
+                : "Capturing the body's circulation with light."}
+            </h2>
+            <p className="body-copy max-w-3xl">
+              {locale === "ja"
+                ? "光学計測を通して血流分布、末梢循環、病態に伴う変化を段階的に捉え、基礎的な計測評価から可視化、応用的なモニタリングへ研究を展開しています。"
+                : "The research captures blood flow distribution, peripheral circulation, and pathological change through optical measurement, progressing from foundational evaluation to visualization and application-oriented monitoring."}
+            </p>
+          </div>
         </div>
 
-        <div className="mt-10 grid gap-5 xl:grid-cols-3">
-          {researchProjects.map((project) => (
-            <div
-              className="interactive-card interactive-card-active h-full p-7 sm:p-8"
+        <div className="mt-10 grid border-y border-slate-200 bg-white/55 lg:grid-cols-3 lg:divide-x lg:divide-slate-200">
+          {researchProjects.map((project, index) => (
+            <article
+              className="group border-b border-slate-200 px-4 py-7 last:border-b-0 sm:px-6 lg:border-b-0 lg:px-7"
               key={project.title.en}
             >
-              <span className="chip">{stageLabel[project.stage][locale]}</span>
-              <h3 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950">
+              <div className="flex items-center justify-between gap-4">
+                <span className="meta-label text-cyan-700">
+                  {stageLabel[project.stage][locale]}
+                </span>
+                <span className="font-display text-3xl font-semibold text-slate-300 transition group-hover:text-cyan-500">
+                  0{index + 1}
+                </span>
+              </div>
+              <h3 className="card-title mt-5">
                 {localize(locale, project.title)}
               </h3>
-              <p className="mt-4 text-base leading-8 text-slate-700">
+              <p className="card-copy mt-3">
                 {localize(locale, project.subtitle ?? project.description)}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>

@@ -29,7 +29,7 @@ export function Awards({ locale }: AwardsProps) {
 
         {sortedAwards.length === 0 ? (
           <div className="section-card p-10 text-center">
-            <p className="text-lg font-semibold text-slate-900">
+            <p className="card-title">
               {locale === "ja"
                 ? "受賞歴データは今後追加予定です。"
                 : "Award data will be added soon."}
@@ -43,7 +43,7 @@ export function Awards({ locale }: AwardsProps) {
                 key={`${award.title.en}-${award.year}`}
               >
                 <span className="absolute -left-[2.8rem] top-8 h-4 w-4 rounded-full border-4 border-white bg-cyan-500 shadow-sm" />
-                <div className="mb-3 inline-flex rounded-full border border-cyan-100 bg-cyan-50 px-4 py-1.5 text-sm font-semibold text-cyan-800">
+                <div className="mb-3 inline-flex rounded-lg border border-cyan-100 bg-cyan-50 px-4 py-1.5 text-sm font-semibold text-cyan-800">
                   {award.year}
                 </div>
                 <ExternalLinkCard
@@ -51,14 +51,14 @@ export function Awards({ locale }: AwardsProps) {
                   className="space-y-3"
                   href={award.url}
                 >
-                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                  <h3 className="card-title">
                     {localize(locale, award.title)}
                   </h3>
-                  <p className="text-sm font-medium text-slate-700">
+                  <p className="text-base font-medium leading-7 text-slate-700">
                     {localize(locale, award.organization)}
                   </p>
                   {award.description ? (
-                    <p className="text-sm leading-7 text-slate-600">
+                    <p className="card-copy">
                       {localize(locale, award.description)}
                     </p>
                   ) : null}

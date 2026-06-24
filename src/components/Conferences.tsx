@@ -74,12 +74,12 @@ export function Conferences({ locale }: ConferencesProps) {
 
         {sortedConferences.length === 0 ? (
           <div className="section-card p-10 text-center">
-            <p className="text-lg font-semibold text-slate-900">
+            <p className="card-title">
               {locale === "ja"
                 ? "学会発表データは準備中です。"
                 : "Conference presentation data will be added soon."}
             </p>
-            <p className="mt-3 text-sm leading-7 text-slate-600">
+            <p className="card-copy mt-3">
               {locale === "ja"
                 ? "実在する学会発表を "
                 : "Add real presentation records to "}
@@ -104,26 +104,29 @@ export function Conferences({ locale }: ConferencesProps) {
                   key={`${presentation.title.en}-${presentation.sortDate}`}
                 >
                   <div className="flex flex-wrap items-start justify-between gap-4">
-                    <h3 className="max-w-2xl text-xl font-semibold tracking-tight text-slate-950">
+                    <h3 className="card-title max-w-2xl">
                       {localize(locale, presentation.title)}
                     </h3>
                     {presentation.presentationType ? (
-                      <span className="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-800">
+                      <span className="rounded-lg border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-800">
                         {presentationTypeLabel(locale, presentation.presentationType)}
                       </span>
                     ) : null}
                   </div>
 
-                  <div className="space-y-1 text-sm leading-7 text-slate-600">
+                  <div className="card-copy space-y-1">
                     <p>{renderAuthors(presentation, locale)}</p>
                     <p className="font-medium text-slate-700">
                       {localize(locale, presentation.conference)}
                     </p>
-                    <p>
-                      {localize(locale, presentation.dateLabel)}
-                      {presentation.location
-                        ? ` | ${localize(locale, presentation.location)}`
-                        : ""}
+                    <p className="flex flex-wrap items-center gap-x-2">
+                      <span>{localize(locale, presentation.dateLabel)}</span>
+                      {presentation.location ? (
+                        <>
+                          <span aria-hidden="true" className="text-cyan-500">·</span>
+                          <span>{localize(locale, presentation.location)}</span>
+                        </>
+                      ) : null}
                     </p>
                   </div>
 
