@@ -485,7 +485,7 @@ export function Research({ locale, onNavigate }: ResearchProps) {
         <section aria-labelledby="scos-title" className="panel-soft overflow-hidden">
           <div className="grid gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:px-10">
             <div>
-              <p className="text-base font-bold uppercase text-cyan-700 sm:text-lg">SCOS</p>
+              <p className="section-kicker">SCOS</p>
               <h2 className="display-title mt-4" id="scos-title">
                 {locale === "ja" ? "スペックルを、深部血流計測へ" : "Extending speckle to deeper-tissue flow measurement"}
               </h2>
