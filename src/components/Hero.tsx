@@ -59,6 +59,24 @@ function CodeIcon(props: IconProps) {
   );
 }
 
+function renderEducationLine(line: string) {
+  const tsukubaProgram = "筑波大学大学院理工情報生命学術院システム情報工学研究群";
+
+  if (!line.includes(tsukubaProgram)) {
+    return line;
+  }
+
+  return (
+    <>
+      <span className="block">筑波大学大学院理工情報生命学術院</span>
+      <span className="block">
+        システム情報工学研究群
+        {line.replace(tsukubaProgram, "")}
+      </span>
+    </>
+  );
+}
+
 export function Hero({ locale, onNavigate }: HeroProps) {
   const secondaryName = locale === "ja" ? profile.name.en : profile.name.ja;
   const educationDetail = aboutDetails.find((detail) => detail.label.en === "Education");
@@ -94,7 +112,6 @@ export function Hero({ locale, onNavigate }: HeroProps) {
   ];
 
   const copy = {
-    eyebrow: locale === "ja" ? "ホーム" : "Home",
     label: locale === "ja" ? "研究者プロフィール" : "Researcher profile",
     researchButton: locale === "ja" ? "研究内容を見る" : "View Research",
     publicationsButton: locale === "ja" ? "論文を見る" : "View Publications",
@@ -114,8 +131,6 @@ export function Hero({ locale, onNavigate }: HeroProps) {
       <div className="section-inner">
         <div className="grid items-start gap-12 xl:grid-cols-[0.88fr_1.12fr] xl:gap-16">
           <div className="space-y-8 xl:pt-4">
-            <span className="eyebrow">{copy.eyebrow}</span>
-
             <div className="space-y-6">
               <p className="section-kicker">
                 {copy.label}
@@ -185,7 +200,7 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                   <dt className="meta-label">
                     {copy.fieldLabel}
                   </dt>
-                  <dd className="card-copy text-slate-700 [word-break:auto-phrase]">
+                  <dd className="card-copy min-w-0 text-slate-700 [word-break:auto-phrase]">
                     {profile.researchField[locale]}
                   </dd>
                 </div>
@@ -194,15 +209,17 @@ export function Hero({ locale, onNavigate }: HeroProps) {
                   <dt className="meta-label">
                     {copy.educationLabel}
                   </dt>
-                  <dd>
-                    <ul className="space-y-3 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
+                  <dd className="min-w-0">
+                    <ul className="min-w-0 space-y-3 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
                     {educationLines.map((line) => (
-                      <li className="flex items-start gap-3" key={line}>
+                      <li className="flex min-w-0 items-start gap-3" key={line}>
                         <span
                           aria-hidden="true"
                           className="mt-[0.7rem] h-1.5 w-1.5 flex-none rounded-full bg-cyan-500"
                         />
-                        <span className="[word-break:auto-phrase]">{line}</span>
+                        <span className="min-w-0 [word-break:auto-phrase]">
+                          {renderEducationLine(line)}
+                        </span>
                       </li>
                     ))}
                     </ul>

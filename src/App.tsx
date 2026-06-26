@@ -208,7 +208,7 @@ function App() {
         ) : (
           <>
             <Hero locale={locale} onNavigate={navigate} />
-            <About locale={locale} />
+            <About locale={locale} onNavigate={navigate} />
             <Publications locale={locale} />
             <Conferences locale={locale} />
             <Awards locale={locale} />

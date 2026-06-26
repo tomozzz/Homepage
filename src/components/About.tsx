@@ -1,9 +1,10 @@
 import { researchProjects } from "../data/researchProjects";
-import type { Locale } from "../types";
+import type { Locale, RouteKey } from "../types";
 import { localize } from "../utils/localize";
 
 type AboutProps = {
   locale: Locale;
+  onNavigate: (page: RouteKey, sectionId?: string) => void;
 };
 
 const stageLabel = {
@@ -21,7 +22,7 @@ const stageLabel = {
   }
 } as const;
 
-export function About({ locale }: AboutProps) {
+export function About({ locale, onNavigate }: AboutProps) {
   return (
     <section className="section-shell" id="about">
       <div className="section-inner">
@@ -43,7 +44,7 @@ export function About({ locale }: AboutProps) {
           </div>
         </div>
 
-        <div className="mt-10 grid border-y border-slate-200 bg-white/55 lg:grid-cols-3 lg:divide-x lg:divide-slate-200">
+        <div className="mt-10 grid border-y border-slate-200 bg-white/55 lg:grid-cols-3">
           {researchProjects.map((project, index) => (
             <article
               className="group border-b border-slate-200 px-4 py-7 last:border-b-0 sm:px-6 lg:border-b-0 lg:px-7"
@@ -65,6 +66,16 @@ export function About({ locale }: AboutProps) {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <button
+            className="inline-flex items-center rounded-full border border-slate-200 bg-white/85 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-700 hover:shadow-soft focus-visible:border-cyan-300"
+            onClick={() => onNavigate("research", "research")}
+            type="button"
+          >
+            {locale === "ja" ? "研究内容を詳しく見る" : "View research details"}
+          </button>
         </div>
       </div>
     </section>

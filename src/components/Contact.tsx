@@ -102,7 +102,7 @@ export function Contact({ locale }: ContactProps) {
         <SectionTitle
           description={
             locale === "ja"
-              ? "研究連絡や共同研究の相談につながるよう、シンプルでアクセスしやすい連絡先に整理しています。"
+              ? "研究連絡や共同研究の相談をお待ちしております。"
               : "A simple contact area designed for research communication and potential collaboration."
           }
           eyebrow="Contact"
