@@ -36,15 +36,15 @@ export const conferences: ConferencePresentation[] = [
       en: "Speckle Contrast Optical Spectroscopy for Microcirculatory Assessment in a Hemorrhagic Shock Model"
     },
     authors: [
-      { ja: "山本 智也", en: "Tomoya Yamamoto", isSelf: true },
+      { ja: "Tomoya Yamamoto", en: "Tomoya Yamamoto", isSelf: true },
       { ja: "Koki Kurono", en: "Koki Kurono" },
       { ja: "Kenta Oba", en: "Kenta Oba" },
       { ja: "Hiroki Matsushita", en: "Hiroki Matsushita" },
-      { ja: "橋本 周汰", en: "Shuta Hashimoto" },
+      { ja: "Shuta Hashimoto", en: "Shuta Hashimoto" },
       { ja: "Mei Mochizuki", en: "Mei Mochizuki" },
       { ja: "Keita Saku", en: "Keita Saku" },
-      { ja: "一之瀬 真志", en: "Masashi Ichinose" },
-      { ja: "小野 弓絵", en: "Yumie Ono" }
+      { ja: "Masashi Ichinose", en: "Masashi Ichinose" },
+      { ja: "Yumie Ono", en: "Yumie Ono" }
     ],
     conference: {
       ja: "Optica Biophotonics Congress: Biomedical Optics 2026",
@@ -60,7 +60,6 @@ export const conferences: ConferencePresentation[] = [
       ja: "2026年4月",
       en: "April 2026"
     },
-    presentationType: "Poster",
     url: "https://opg.optica.org/abstract.cfm?uri=Translational-2026-JT4A.31",
     tags: ["SCOS", "Hemorrhagic shock"]
   },
@@ -70,12 +69,12 @@ export const conferences: ConferencePresentation[] = [
       en: "Evaluation of the Deep Tissue Blood Flow Detection Capability of Speckle Contrast Optical Spectroscopy"
     },
     authors: [
-      { ja: "橋本 周汰", en: "Shuta Hashimoto" },
-      { ja: "山本 智也", en: "Tomoya Yamamoto", isSelf: true },
+      { ja: "Shuta Hashimoto", en: "Shuta Hashimoto" },
+      { ja: "Tomoya Yamamoto", en: "Tomoya Yamamoto", isSelf: true },
       { ja: "Nisan Ozana", en: "Nisan Ozana" },
       { ja: "Vika Tarle", en: "Vika Tarle" },
-      { ja: "一之瀬 真志", en: "Masashi Ichinose" },
-      { ja: "小野 弓絵", en: "Yumie Ono" }
+      { ja: "Masashi Ichinose", en: "Masashi Ichinose" },
+      { ja: "Yumie Ono", en: "Yumie Ono" }
     ],
     conference: {
       ja: "Optica Biophotonics Congress: Biomedical Optics 2026",
@@ -91,7 +90,6 @@ export const conferences: ConferencePresentation[] = [
       ja: "2026年4月",
       en: "April 2026"
     },
-    presentationType: "Oral",
     url: "https://opg.optica.org/abstract.cfm?uri=ots-2026-OT1D.2",
     tags: ["SCOS", "Deep tissue blood flow"]
   },
