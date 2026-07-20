@@ -2,6 +2,38 @@ import type { Publication } from "../types";
 
 export const publications: Publication[] = [
   {
+    title:
+      "Speckle Contrast Optical Spectroscopy for Microcirculatory Assessment in a Hemorrhagic Shock Model",
+    authors:
+      "Tomoya Yamamoto, Koki Kurono, Kenta Oba, Hiroki Matsushita, Shuta Hashimoto, Mei Mochizuki, Keita Saku, Masashi Ichinose, and Yumie Ono",
+    venue:
+      "Clinical and Translational Biophotonics (Translational) 2026, in Proceedings Optica Biophotonics Congress 2026",
+    year: "2026",
+    sortDate: "2026-04-01",
+    url: "https://opg.optica.org/abstract.cfm?uri=Translational-2026-JT4A.31",
+    tags: ["SCOS", "Hemorrhagic shock", "Conference proceeding"],
+    type: {
+      ja: "国際会議プロシーディング",
+      en: "Conference proceeding"
+    }
+  },
+  {
+    title:
+      "Evaluation of the Deep Tissue Blood Flow Detection Capability of Speckle Contrast Optical Spectroscopy",
+    authors:
+      "Shuta Hashimoto, Tomoya Yamamoto, Nisan Ozana, Vika Tarle, Masashi Ichinose, and Yumie Ono",
+    venue:
+      "Optical Tomography and Spectroscopy (OTS) 2026, in Proceedings Optica Biophotonics Congress 2026",
+    year: "2026",
+    sortDate: "2026-04-01",
+    url: "https://opg.optica.org/abstract.cfm?uri=ots-2026-OT1D.2",
+    tags: ["SCOS", "Deep tissue blood flow", "Conference proceeding"],
+    type: {
+      ja: "国際会議プロシーディング",
+      en: "Conference proceeding"
+    }
+  },
+  {
     title: "Feasibility of Speckle Contrast Optical Spectroscopy for Quantifying Active Muscle Blood Flow",
     authors:
       "Tomoya Yamamoto, Vika Tarle, Masashi Ichinose, Nisan Ozana, and Yumie Ono",
